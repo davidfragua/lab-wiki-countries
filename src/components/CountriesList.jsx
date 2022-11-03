@@ -1,16 +1,16 @@
 import countries from '../countries.json';
-import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 
 function CountriesList() {
-  const [countriesList, setCountriesList] = useState(countries);
+
 
   return (
     <div>
       <h2>CountriesList</h2>
 
       <ul>
-        {countriesList.map((eachCountry) => {
+        {countries.map((eachCountry) => {
           return (
             <div className="container">
               <div className="row">
@@ -23,6 +23,9 @@ function CountriesList() {
                     >
                       <Link to={`/countries/${eachCountry.alpha3Code}`}>
                         {eachCountry.name.common}
+                        {/* no me funciona la interpolación en la url */}
+                        {/* <img src=`https://flagpedia.net/data/flags/icon/72x54/${eachCountry.alpha2Code}.png` alt="" /> */}
+                        
                       </Link>
                     </li>
                   </div>

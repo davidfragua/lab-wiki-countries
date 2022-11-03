@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import CountriesList from './components/CountriesList';
 import { Route, Routes } from 'react-router-dom';
 import CountryDetails from './components/CountryDetails';
+import countries from "./countries.json"
 
 function App() {
   return (
@@ -11,11 +12,11 @@ function App() {
       
     <Navbar />
     <CountriesList />
-    <CountryDetails />
+  
 
     <Routes>
 
-      <Route path={`/countries/:code`} element={ <CountryDetails CountriesList={CountriesList}/> } />
+      <Route path={`/countries/:code`} element={ <CountryDetails countries={countries}/> } />
 
 
     </Routes>
